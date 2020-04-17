@@ -1,0 +1,89 @@
+<h1>Lista de instituciones</h1>
+
+
+<ul class ="instituciones">
+  <button (click)="getInstituciones()">Mostrar instituciones</button>
+<li *ngFor="let institucion of instituciones" > <!---- te da objeto heroes de lista heroes-->
+   <p>id:{{institucion._id}} name: {{institucion.nombre}}  </p> 
+     desc : {{institucion.descripcion}} URL:{{institucion.url}}
+     responsable: {{institucion.responsable}}
+
+  </li>
+  
+</ul>
+<h1>Add Institucion</h1>
+<form name="institucionForm" (ngSubmit)= "addInst(institucionname,instituciondesc,institucionurl,institucionresponsable)">
+<p>
+  <label>Nombre:
+  <input  type="text" name="institucionname" placeholder="Nombre" [(ngModel)]="institucionname">  <!--[(ngModel)]="institucionname"[(ngModel)]="institucionresponsable"-->
+
+</label>
+</p>
+<p>
+    <label>descripcion:
+    <input type="text" name="instituciondesc" placeholder="descripcion" [(ngModel)]="instituciondesc">  
+    </label>
+  </p>
+  <p>
+    <label>url:
+    <input type="text" name="institucionurl" placeholder="url" [(ngModel)]="institucionurl">  
+    </label>
+  </p>
+  <p>
+    <label>responsable:
+    <input type="text" name="institucionresponsable" placeholder="responsable" [(ngModel)]="institucionresponsable" >  
+</label>
+  </p>
+<p>
+  <button type ="submit">add</button>
+</p>
+</form>
+
+<h1>Update institucion</h1>
+<form name ="updateForm" (ngSubmit)= "updateInst(institucionname,instituciondesc,institucionurl,institucionresponsable)">
+    <p>
+      <label>Nombre:
+      <input  type="text" name="institucionname" placeholder="Nombre" [(ngModel)]="institucionname">  <!--[(ngModel)]="institucionname"[(ngModel)]="institucionresponsable"-->
+    
+    </label>
+    </p>
+    <p>
+        <label>descripcion:
+        <input type="text" name="instituciondesc" placeholder="descripcion" [(ngModel)]="instituciondesc">  
+        </label>
+      </p>
+      <p>
+        <label>url:
+        <input type="text" name="institucionurl" placeholder="url" [(ngModel)]="institucionurl">  
+        </label>
+      </p>
+      <p>
+        <label>responsable:
+        <input type="text" name="institucionresponsable" placeholder="responsable" [(ngModel)]="institucionresponsable" >  
+    </label>
+      </p>
+    <p>
+      <button type ="submit">update</button>
+    </p>
+    </form>
+
+
+
+
+<!-- 
+<h1>Add Student to subject</h1>
+<form name ="addtosubject" (ngSubmit)= "addtosubj(studentname,subjectname2)">
+  <p>
+    <label>estudiante:
+    <input type="text" name="studentname" placeholder="estudiante" [(ngModel)]="studentname">  
+    </label>
+  </p>
+  <p>
+    <label>Asignatura:
+    <input type="text" name="subjectname2" placeholder="asignatura" [(ngModel)]="subjectname2">  
+    </label>
+  </p>
+  <p>
+    <button type ="submit">login</button>
+  </p>
+  </form> -->
